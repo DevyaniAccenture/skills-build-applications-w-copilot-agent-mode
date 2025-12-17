@@ -15,7 +15,12 @@ Including another URLconf
 """
 
 import os
-
+from django.contrib import admin
+from django.urls import include, path
+from rest_framework import routers
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
